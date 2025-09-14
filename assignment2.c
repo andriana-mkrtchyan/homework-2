@@ -10,8 +10,8 @@ int main(void) {
 	    return 1;
     }
     if (c1 == 0) {         
-        execlp("ls", "ls", (char*)NULL);
-        perror("execlp ls");
+        execl("/bin/ls", "ls", (char*)NULL);
+        perror("execl ls");
         _exit(127);
     }
     if (waitpid(c1, NULL, 0) < 0) { 
@@ -25,8 +25,8 @@ int main(void) {
 	    return 1; 
     }
     if (c2 == 0) {                
-        execlp("date", "date", (char*)NULL);
-        perror("execlp date");
+        execl("/bin/date", "date", (char*)NULL);
+        perror("execl date");
         _exit(127);
     }
     if (waitpid(c2, NULL, 0) < 0) { 
